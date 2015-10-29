@@ -65,6 +65,25 @@ class ViewController: UITableViewController, UISearchBarDelegate, UISearchDispla
         return true
     }
     
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        self.performSegueWithIdentifier("wordDefinitionDetail", sender: tableView)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "wordDefinitionDetail" {
+            let wordDefinitionDetailViewController = segue.destinationViewController as UIViewController
+            if sender as! UITableView == self.searchDisplayController!.searchResultsTableView {
+                let indexPath = self.searchDisplayController!.searchResultsTableView.indexPathForSelectedRow!
+                let destinationTitle = self.filteredWordDefinitions[indexPath.row].word
+                wordDefinitionDetailViewController.title = destinationTitle
+            } else {
+                let indexPath = self.tableView.indexPathForSelectedRow!
+                let destinationTitle = self.wordDefinitions[indexPath.row].word
+                wordDefinitionDetailViewController.title = destinationTitle
+            }
+        }
+    }
+    
     func searchDisplayController(controller: UISearchDisplayController, shouldReloadTableForSearchScope searchOption: Int) -> Bool {
         self.filterContentForSearchText(self.searchDisplayController!.searchBar.text!)
         return true
