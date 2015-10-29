@@ -37,14 +37,18 @@ class ViewController: UITableViewController, UISearchBarDelegate, UISearchDispla
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return wordDefinitions.count
+        
+        return tableView == self.searchDisplayController!.searchResultsTableView ? filteredWordDefinitions.count : wordDefinitions.count
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = self.tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as UITableViewCell
-        let wordDefinition = wordDefinitions[indexPath.row]
-        cell.textLabel?.text = wordDefinition.word
         
+        // use the filtered results if the user is searching
+        let wordDefinition = tableView == self.searchDisplayController!.searchResultsTableView ?
+            filteredWordDefinitions[indexPath.row] : wordDefinitions[indexPath.row]
+        
+        cell.textLabel?.text = wordDefinition.word
         return cell
     }
     
