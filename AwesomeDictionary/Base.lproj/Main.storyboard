@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Het Super Awesome Woordenboek-->
@@ -69,10 +70,10 @@
             </objects>
             <point key="canvasLocation" x="606" y="1031"/>
         </scene>
-        <!--View Controller-->
+        <!--Detail View Controller-->
         <scene sceneID="q1q-5z-82h">
             <objects>
-                <viewController id="iKP-nT-cwz" sceneMemberID="viewController">
+                <viewController id="iKP-nT-cwz" customClass="DetailViewController" customModule="AwesomeDictionary" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Hhk-1F-6di"/>
                         <viewControllerLayoutGuide type="bottom" id="9Kw-4C-17m"/>
@@ -80,9 +81,62 @@
                     <view key="view" contentMode="scaleToFill" id="FM8-rq-JO2">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jrj-sU-QRS" userLabel="WordView">
+                                <rect key="frame" x="20" y="64" width="560" height="37"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WordLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mYv-Hl-gN5" userLabel="WordLabel">
+                                        <rect key="frame" x="0.0" y="8" width="560" height="29"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="mYv-Hl-gN5" secondAttribute="trailing" id="5Mx-9o-SYu"/>
+                                    <constraint firstItem="mYv-Hl-gN5" firstAttribute="top" secondItem="jrj-sU-QRS" secondAttribute="topMargin" id="DMF-As-oZz"/>
+                                    <constraint firstItem="mYv-Hl-gN5" firstAttribute="leading" secondItem="jrj-sU-QRS" secondAttribute="leading" id="MWP-AV-as3"/>
+                                    <constraint firstAttribute="bottom" secondItem="mYv-Hl-gN5" secondAttribute="bottom" id="fFH-VX-It1"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dO2-zx-YYz" userLabel="DefinitionView">
+                                <rect key="frame" x="20" y="109" width="560" height="29"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DefinitionLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IhG-Cg-fIZ" userLabel="DefinitionLabel">
+                                        <rect key="frame" x="0.0" y="8" width="560" height="21"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="italicSystem" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstItem="IhG-Cg-fIZ" firstAttribute="top" secondItem="dO2-zx-YYz" secondAttribute="topMargin" id="FLe-CQ-R5T"/>
+                                    <constraint firstAttribute="bottom" secondItem="IhG-Cg-fIZ" secondAttribute="bottom" id="laG-9Z-jIq"/>
+                                    <constraint firstItem="IhG-Cg-fIZ" firstAttribute="leading" secondItem="dO2-zx-YYz" secondAttribute="leading" id="tlZ-nR-aia"/>
+                                    <constraint firstAttribute="trailing" secondItem="IhG-Cg-fIZ" secondAttribute="trailing" id="zIO-L7-qgp"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="leadingMargin" secondItem="dO2-zx-YYz" secondAttribute="leading" id="IcC-aS-A1a"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="jrj-sU-QRS" secondAttribute="trailing" id="PRL-46-n2B"/>
+                            <constraint firstItem="dO2-zx-YYz" firstAttribute="top" secondItem="jrj-sU-QRS" secondAttribute="bottom" constant="8" id="XRf-1B-A4l"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="dO2-zx-YYz" secondAttribute="trailing" id="qi3-Dn-4sg"/>
+                            <constraint firstItem="jrj-sU-QRS" firstAttribute="leading" secondItem="FM8-rq-JO2" secondAttribute="leadingMargin" id="vA6-Iw-ktB"/>
+                            <constraint firstItem="jrj-sU-QRS" firstAttribute="top" secondItem="Hhk-1F-6di" secondAttribute="bottom" id="vgK-bM-FTa"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="definitionLabel" destination="IhG-Cg-fIZ" id="fph-yc-Nbt"/>
+                        <outlet property="wordLabel" destination="mYv-Hl-gN5" id="mbo-pk-BYp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VrH-Am-1Pu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

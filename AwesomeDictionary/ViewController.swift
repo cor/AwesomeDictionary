@@ -71,15 +71,17 @@ class ViewController: UITableViewController, UISearchBarDelegate, UISearchDispla
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "wordDefinitionDetail" {
-            let wordDefinitionDetailViewController = segue.destinationViewController as UIViewController
+            let wordDefinitionDetailViewController = segue.destinationViewController as! DetailViewController
             if sender as! UITableView == self.searchDisplayController!.searchResultsTableView {
                 let indexPath = self.searchDisplayController!.searchResultsTableView.indexPathForSelectedRow!
                 let destinationTitle = self.filteredWordDefinitions[indexPath.row].word
                 wordDefinitionDetailViewController.title = destinationTitle
+                wordDefinitionDetailViewController.wordDefinition = self.filteredWordDefinitions[indexPath.row]
             } else {
                 let indexPath = self.tableView.indexPathForSelectedRow!
                 let destinationTitle = self.wordDefinitions[indexPath.row].word
                 wordDefinitionDetailViewController.title = destinationTitle
+                wordDefinitionDetailViewController.wordDefinition = self.wordDefinitions[indexPath.row]
             }
         }
     }

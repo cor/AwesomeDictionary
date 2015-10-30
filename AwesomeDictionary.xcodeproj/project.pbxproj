@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		872964B21BE38590006C5B3E /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872964B11BE38590006C5B3E /* DetailViewController.swift */; };
 		879939801BE25CED00A34E29 /* WordDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8799397F1BE25CED00A34E29 /* WordDefinition.swift */; };
 		87F9C27B1BE2515800C21D08 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F9C27A1BE2515800C21D08 /* AppDelegate.swift */; };
 		87F9C27D1BE2515800C21D08 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F9C27C1BE2515800C21D08 /* ViewController.swift */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		872964B11BE38590006C5B3E /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		8799397F1BE25CED00A34E29 /* WordDefinition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordDefinition.swift; sourceTree = "<group>"; };
 		87F9C2771BE2515800C21D08 /* AwesomeDictionary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AwesomeDictionary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87F9C27A1BE2515800C21D08 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 				87F9C2811BE2515800C21D08 /* Assets.xcassets */,
 				87F9C2831BE2515800C21D08 /* LaunchScreen.storyboard */,
 				87F9C2861BE2515800C21D08 /* Info.plist */,
+				872964B11BE38590006C5B3E /* DetailViewController.swift */,
 			);
 			path = AwesomeDictionary;
 			sourceTree = "<group>";
@@ -263,6 +266,7 @@
 				879939801BE25CED00A34E29 /* WordDefinition.swift in Sources */,
 				87F9C27D1BE2515800C21D08 /* ViewController.swift in Sources */,
 				87F9C27B1BE2515800C21D08 /* AppDelegate.swift in Sources */,
+				872964B21BE38590006C5B3E /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
