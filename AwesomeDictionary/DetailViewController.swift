@@ -12,22 +12,28 @@ class DetailViewController: UIViewController {
 
     @IBOutlet weak var wordLabel: UILabel!
     @IBOutlet weak var definitionLabel: UILabel!
+    @IBOutlet weak var exampleLabel: UILabel!
     var wordDefinition: WordDefinition!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        definitionLabel.lineBreakMode = .ByWordWrapping
-        definitionLabel.numberOfLines = 0
+        definitionLabel.allowMultipleLines()
+        exampleLabel.allowMultipleLines()
         
-        wordLabel.text = wordDefinition.word
-        definitionLabel.text = wordDefinition.definition
-        // Do any additional setup after loading the view.
+        updateLabels()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func updateLabels() {
+        wordLabel.text = wordDefinition.word
+        definitionLabel.text = wordDefinition.definition
+        exampleLabel.text = wordDefinition.example
     }
     
 

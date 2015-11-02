@@ -29,6 +29,13 @@ class ViewController: UITableViewController, UISearchBarDelegate, UISearchDispla
         ]
         
         self.wordDefinitions = sampleWords
+        sortWordDefinitions()
+    }
+    
+    func sortWordDefinitions() {
+        wordDefinitions.sortInPlace {
+            $0.word < $1.word
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -55,7 +62,7 @@ class ViewController: UITableViewController, UISearchBarDelegate, UISearchDispla
     func filterContentForSearchText(searchText: String) {
         self.filteredWordDefinitions = self.wordDefinitions.filter() {
             (wordDefinition: WordDefinition) -> Bool in
-            let stringMatch = wordDefinition.word.rangeOfString(searchText)
+            let stringMatch = wordDefinition.word.uppercaseString.rangeOfString(searchText.uppercaseString)
             return stringMatch != nil // if it isn't nil, then there's a match
         }
     }

@@ -89,7 +89,7 @@
                                         <rect key="frame" x="0.0" y="8" width="560" height="29"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -109,7 +109,7 @@
                                         <rect key="frame" x="0.0" y="8" width="560" height="21"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" type="italicSystem" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -121,13 +121,36 @@
                                     <constraint firstAttribute="trailing" secondItem="IhG-Cg-fIZ" secondAttribute="trailing" id="zIO-L7-qgp"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="syQ-ij-blt" userLabel="ExampleView">
+                                <rect key="frame" x="20" y="138" width="560" height="29"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ExampleLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZEL-wL-4sY">
+                                        <rect key="frame" x="0.0" y="8" width="560" height="21"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="ZEL-wL-4sY" secondAttribute="bottom" id="ATs-5Q-KQX"/>
+                                    <constraint firstAttribute="trailing" secondItem="ZEL-wL-4sY" secondAttribute="trailing" id="KpV-3A-HYq"/>
+                                    <constraint firstItem="ZEL-wL-4sY" firstAttribute="top" secondItem="syQ-ij-blt" secondAttribute="topMargin" id="XIg-5M-CS2"/>
+                                    <constraint firstItem="ZEL-wL-4sY" firstAttribute="leading" secondItem="syQ-ij-blt" secondAttribute="leading" id="Yyq-PF-UGX"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="syQ-ij-blt" secondAttribute="trailing" id="6C8-Sr-47M"/>
                             <constraint firstAttribute="leadingMargin" secondItem="dO2-zx-YYz" secondAttribute="leading" id="IcC-aS-A1a"/>
                             <constraint firstAttribute="trailingMargin" secondItem="jrj-sU-QRS" secondAttribute="trailing" id="PRL-46-n2B"/>
                             <constraint firstItem="dO2-zx-YYz" firstAttribute="top" secondItem="jrj-sU-QRS" secondAttribute="bottom" constant="8" id="XRf-1B-A4l"/>
+                            <constraint firstItem="syQ-ij-blt" firstAttribute="leading" secondItem="FM8-rq-JO2" secondAttribute="leadingMargin" id="cjF-nu-p13"/>
+                            <constraint firstItem="syQ-ij-blt" firstAttribute="top" secondItem="dO2-zx-YYz" secondAttribute="bottom" id="gBt-yq-X6P"/>
                             <constraint firstAttribute="trailingMargin" secondItem="dO2-zx-YYz" secondAttribute="trailing" id="qi3-Dn-4sg"/>
                             <constraint firstItem="jrj-sU-QRS" firstAttribute="leading" secondItem="FM8-rq-JO2" secondAttribute="leadingMargin" id="vA6-Iw-ktB"/>
                             <constraint firstItem="jrj-sU-QRS" firstAttribute="top" secondItem="Hhk-1F-6di" secondAttribute="bottom" id="vgK-bM-FTa"/>
@@ -135,6 +158,7 @@
                     </view>
                     <connections>
                         <outlet property="definitionLabel" destination="IhG-Cg-fIZ" id="fph-yc-Nbt"/>
+                        <outlet property="exampleLabel" destination="ZEL-wL-4sY" id="xZJ-Lv-lBk"/>
                         <outlet property="wordLabel" destination="mYv-Hl-gN5" id="mbo-pk-BYp"/>
                     </connections>
                 </viewController>
